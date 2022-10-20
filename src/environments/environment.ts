@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  CLIENT_ID: 'a8359e73b0664931bc195c90df87d0d1',
+  BASE_URL: 'localhost:4200/',
+  SPOTIFY_BASE_URL: 'https://api.spotify.com/',
+  authorizationEndpoint: `https://accounts.spotify.com/authorize?client_id=a8359e73b0664931bc195c90df87d0d1&response_type=token&redirect_uri=${encodeURIComponent(
+    'http://localhost:4200/logged-in'
+  )}&scope=${encodeURIComponent(
+    'user-follow-read user-read-currently-playing user-library-modify playlist-modify-private playlist-modify-public user-library-read'
+  )}`,
 };
 
 /*
