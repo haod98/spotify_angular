@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { LoggedInComponent } from './logged-in/logged-in.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'logged-in', component: LoginComponent },
+  { path: 'logged-in', component: LoggedInComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, LoggedInComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
