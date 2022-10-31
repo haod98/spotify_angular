@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   exports: [RouterModule],
   providers: [],
