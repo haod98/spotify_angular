@@ -1,4 +1,6 @@
 <p>logged-in works!</p>
-<button mat-raised-button color="primary" (click)="getAlbum()">
-  Get Album
-</button>
+
+<ng-container *ngIf="userData | async as user">
+  <p>{{ user?.display_name }}</p>
+  <p>{{ user?.href }}</p>
+</ng-container>
