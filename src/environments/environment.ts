@@ -10,7 +10,7 @@ export const environment = {
   authorizationEndpoint: `https://accounts.spotify.com/authorize?client_id=a8359e73b0664931bc195c90df87d0d1&response_type=token&redirect_uri=${encodeURIComponent(
     'http://localhost:4200/logged-in'
   )}&scope=${encodeURIComponent(
-    'user-follow-read user-read-currently-playing user-library-modify playlist-modify-private playlist-modify-public user-library-read'
+    'user-follow-read user-read-currently-playing user-library-modify playlist-modify-private playlist-modify-public user-library-read user-top-read'
   )}`,
 };
 

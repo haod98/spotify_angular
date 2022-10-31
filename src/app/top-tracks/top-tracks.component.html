@@ -1,0 +1,19 @@
+<p class="text-xl font-bold text-center">Your top artists</p>
+<div class="grid grid-cols-2 gap-3">
+  <div *ngFor="let artist of (myTopArtists | async)?.items; index as i">
+    <a [href]="artist.external_urls.spotify">
+      <mat-card class="mb-2 text-center max-w-[200px]">
+        <mat-card-title class="text-sm">
+          {{ i + 1 }} {{ artist.name }}
+        </mat-card-title>
+        <div class="flex justify-center">
+          <img
+            [src]="artist.images[1].url"
+            mat-card-md-image
+            class="text-center"
+          />
+        </div>
+      </mat-card>
+    </a>
+  </div>
+</div>

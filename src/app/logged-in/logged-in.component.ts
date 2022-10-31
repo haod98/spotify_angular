@@ -7,12 +7,12 @@ import { SpotifyRequestsService } from '../spotify-requests.service';
   styleUrls: ['./logged-in.component.css'],
 })
 export class LoggedInComponent implements OnInit {
-  dataResponse: Object | null;
+  // dataResponse: Object | null;
   userData!: Promise<SpotifyApi.CurrentUsersProfileResponse>;
 
   constructor(private spotifyService: SpotifyRequestsService) {
     this.spotifyService.saveDataHashToLocalStorage();
-    this.dataResponse = this.spotifyService.getItemFromLocalStorage();
+    // this.dataResponse = this.spotifyService.getItemFromLocalStorage();
   }
 
   async ngOnInit() {
