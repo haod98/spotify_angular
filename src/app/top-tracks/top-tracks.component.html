@@ -1,0 +1,26 @@
+<p class="text-xl font-bold text-center">Your top tracks</p>
+<div class="grid justify-center gap-3">
+  <ng-container *ngIf="myTopTracks | async; else loading">
+    <div *ngFor="let track of (myTopTracks | async)?.items; index as i">
+      <a [href]="track.external_urls.spotify" target="_blank">
+        <mat-card class="text-center">
+          <mat-card-title class="text-sm">
+            {{ i + 1 }} {{ track.name }} - {{track.artists[0].name}}
+          </mat-card-title>
+          <div class="flex justify-center">
+            <img
+              [alt]="track.name"
+              [src]="track.album.images[1].url"
+              class="text-center"
+              mat-card-md-image
+            />
+          </div>
+        </mat-card>
+      </a>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
