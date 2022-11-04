@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SpotifyRequestsService } from '../spotify-requests.service';
+import {Component, OnInit} from '@angular/core';
+import {SpotifyRequestsService} from '../spotify-requests.service';
+import {ResponseData} from "../types";
 
 @Component({
   selector: 'app-logged-in',
@@ -7,16 +8,16 @@ import { SpotifyRequestsService } from '../spotify-requests.service';
   styleUrls: ['./logged-in.component.css'],
 })
 export class LoggedInComponent implements OnInit {
-  // dataResponse: Object | null;
+  dataResponse!: ResponseData | null;
   userData!: Promise<SpotifyApi.CurrentUsersProfileResponse>;
 
   constructor(private spotifyService: SpotifyRequestsService) {
-    this.spotifyService.saveDataHashToLocalStorage();
-    // this.dataResponse = this.spotifyService.getItemFromLocalStorage();
   }
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.spotifyService.saveDataHashToLocalStorage();
+    this.dataResponse = this.spotifyService.getDataFromLocalStorage();
     this.userData = this.spotifyService.s.getMe();
-    console.log(await this.userData);
+    // console.log(await this.userData);
   }
 }
