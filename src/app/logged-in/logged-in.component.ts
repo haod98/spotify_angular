@@ -14,10 +14,10 @@ export class LoggedInComponent implements OnInit {
   constructor(private spotifyService: SpotifyRequestsService) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.spotifyService.saveDataHashToLocalStorage();
     this.dataResponse = this.spotifyService.getDataFromLocalStorage();
     this.userData = this.spotifyService.s.getMe();
-    // console.log(await this.userData);
+    // console.log(await this.userData)
   }
 }

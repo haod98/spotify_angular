@@ -14,6 +14,6 @@ export class TopArtistsComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    console.log(await this.myTopArtists);
+    // console.log(await this.myTopArtists);
   }
 }

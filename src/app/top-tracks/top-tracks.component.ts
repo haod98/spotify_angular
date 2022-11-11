@@ -15,8 +15,7 @@ export class TopTracksComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    console.log('hello');
-    console.log(await this.myTopTracks);
+    // console.log(await this.myTopTracks);
   }
 
 }

@@ -1,8 +1,8 @@
-<p>logged-in works!</p>
-
 <ng-container *ngIf="userData | async as user">
-  <p>{{ user?.display_name }}</p>
-  <p>{{ user?.href }}</p>
+  <a href="{{user?.href}}">
+    <p>Hello {{ user?.display_name }}</p>
+  </a>
+  <p>Here are your tracks</p>
 </ng-container>
 
 <app-top-tracks></app-top-tracks>

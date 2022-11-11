@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import SpotifyWebApi from 'spotify-web-api-js';
 import {ResponseData} from "./types";
 
@@ -11,7 +10,7 @@ export class SpotifyRequestsService {
   s: SpotifyWebApi.SpotifyWebApiJs;
   LOCALSTORAGE_DATA_NAME = 'data';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private route: ActivatedRoute) {
     this.s = new SpotifyWebApi();
     this.s.setAccessToken(this.getAccessTokenFromLocalStorage());
   }
