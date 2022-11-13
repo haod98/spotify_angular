@@ -2,9 +2,23 @@
   <a href="{{user?.href}}">
     <p>Hello {{ user?.display_name }}</p>
   </a>
-  <p>Here are your tracks</p>
+  <p>Here are your {{selection}}</p>
 </ng-container>
 
-<app-select-options></app-select-options>
-<app-top-tracks></app-top-tracks>
-<app-top-artists></app-top-artists>
+<form [formGroup]="form">
+  <label for="result">Choose:</label>
+  <select [(ngModel)]="selection" formControlName="results" id="result"
+          name="result">
+    <option value="tracks">Tracks</option>
+    <option value="artists">Artists</option>
+  </select>
+</form>
+
+<ng-container *ngIf="selection === 'tracks' else artists">
+  <app-top-tracks></app-top-tracks>
+</ng-container>
+
+
+<ng-template #artists>
+  <app-top-artists></app-top-artists>
+</ng-template>

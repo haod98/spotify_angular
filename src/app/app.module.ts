@@ -16,7 +16,6 @@ import {TopArtistsComponent} from './top-artists/top-artists.component';
 import {TopTracksComponent} from './top-tracks/top-tracks.component';
 import {LoggedRedirectComponent} from './logged-redirect/logged-redirect.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {SelectOptionsComponent} from './select-options/select-options.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
@@ -36,7 +35,6 @@ const routes: Routes = [
     TopTracksComponent,
     LoggedRedirectComponent,
     PageNotFoundComponent,
-    SelectOptionsComponent,
   ],
   imports: [
     BrowserModule,
