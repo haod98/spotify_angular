@@ -11,7 +11,8 @@ export class LoggedInComponent implements OnInit {
   dataResponse!: ResponseData | null;
   userData!: Promise<SpotifyApi.CurrentUsersProfileResponse>;
 
-  constructor(private spotifyService: SpotifyRequestsService) {
+  constructor(private requestsService: SpotifyRequestsService) {
+    this.userData = requestsService.spotify.getMe();
   }
 
   async ngOnInit() {

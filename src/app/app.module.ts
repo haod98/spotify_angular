@@ -16,6 +16,8 @@ import {TopArtistsComponent} from './top-artists/top-artists.component';
 import {TopTracksComponent} from './top-tracks/top-tracks.component';
 import {LoggedRedirectComponent} from './logged-redirect/logged-redirect.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {SelectOptionsComponent} from './select-options/select-options.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -34,6 +36,7 @@ const routes: Routes = [
     TopTracksComponent,
     LoggedRedirectComponent,
     PageNotFoundComponent,
+    SelectOptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   exports: [RouterModule],
   providers: [],
