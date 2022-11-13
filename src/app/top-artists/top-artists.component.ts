@@ -9,8 +9,8 @@ import {SpotifyRequestsService} from '../spotify-requests.service';
 export class TopArtistsComponent implements OnInit {
   myTopArtists!: Promise<SpotifyApi.UsersTopArtistsResponse>;
 
-  constructor(private spotifyRequest: SpotifyRequestsService) {
-    this.myTopArtists = this.spotifyRequest.s.getMyTopArtists({limit: 10});
+  constructor(private requestsService: SpotifyRequestsService) {
+    this.myTopArtists = this.requestsService.spotify.getMyTopArtists({limit: 10});
   }
 
   async ngOnInit(): Promise<void> {

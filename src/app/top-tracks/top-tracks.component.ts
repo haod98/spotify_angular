@@ -10,8 +10,8 @@ export class TopTracksComponent implements OnInit {
 
   myTopTracks!: Promise<SpotifyApi.UsersTopTracksResponse>;
 
-  constructor(private spotify: SpotifyRequestsService) {
-    this.myTopTracks = spotify.s.getMyTopTracks({limit: 10, time_range: "short_term"});
+  constructor(private requestsService: SpotifyRequestsService) {
+    this.myTopTracks = requestsService.spotify.getMyTopTracks({limit: 10, time_range: "short_term"});
   }
 
   async ngOnInit(): Promise<void> {

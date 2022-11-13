@@ -19,7 +19,7 @@ export class LoggedRedirectComponent implements OnInit {
   ngOnInit(): void {
     if (this.hashUrlExits()) {
       this.saveDataHashToLocalStorage();
-      this.spotify.setAccessToken(this.getAccessTokenFromLocalStorage());
+      this.r.navigate(['/logged-in']);
     }
   }
 
