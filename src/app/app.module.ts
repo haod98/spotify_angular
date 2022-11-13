@@ -14,10 +14,13 @@ import {LoginComponent} from './login/login.component';
 import {LoggedInComponent} from './logged-in/logged-in.component';
 import {TopArtistsComponent} from './top-artists/top-artists.component';
 import {TopTracksComponent} from './top-tracks/top-tracks.component';
+import {LoggedRedirectComponent} from './logged-redirect/logged-redirect.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'logged-in', component: LoggedInComponent},
+  {path: 'logged-redirect', component: LoggedRedirectComponent},
+
 ];
 
 @NgModule({
@@ -27,6 +30,7 @@ const routes: Routes = [
     LoggedInComponent,
     TopArtistsComponent,
     TopTracksComponent,
+    LoggedRedirectComponent,
   ],
   imports: [
     BrowserModule,

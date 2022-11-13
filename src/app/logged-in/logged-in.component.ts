@@ -15,9 +15,5 @@ export class LoggedInComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.spotifyService.saveDataHashToLocalStorage();
-    this.dataResponse = this.spotifyService.getDataFromLocalStorage();
-    this.userData = this.spotifyService.s.getMe();
-    // console.log(await this.userData)
   }
 }
