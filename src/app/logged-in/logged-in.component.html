@@ -2,15 +2,14 @@
   <a href="{{user?.href}}">
     <p>Hello {{ user?.display_name }}</p>
   </a>
-  <p>Here are your {{selection}}</p>
 </ng-container>
 
 <form [formGroup]="form">
-  <label for="result">Choose:</label>
-  <select [(ngModel)]="selection" formControlName="results" id="result"
+  <label for="result">Choose your:</label>
+  <select (change)="toggleTopArtistsAndTrack()" formControlName="results" id="result"
           name="result">
-    <option value="tracks">Tracks</option>
-    <option value="artists">Artists</option>
+    <option value="tracks">Top Tracks</option>
+    <option value="artists">Top Artists</option>
   </select>
 </form>
 

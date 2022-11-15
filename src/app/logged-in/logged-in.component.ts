@@ -11,24 +11,23 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 export class LoggedInComponent implements OnInit {
   dataResponse!: ResponseData | null;
   userData!: Promise<SpotifyApi.CurrentUsersProfileResponse>;
-  public form: FormGroup;
+  public form!: FormGroup;
   public selection = 'tracks';
 
-  //TODO: Fix console log warning
   constructor(private requestsService: SpotifyRequestsService, private builder: FormBuilder) {
     this.userData = requestsService.spotify.getMe();
-    this.form = new FormGroup<{ results: FormControl }>(
+  };
+
+  ngOnInit() {
+    this.form = new FormGroup(
       {
-        results: new FormControl('tracks'),
+        results: new FormControl(this.selection),
       }
     );
-  }
+  };
 
-  selectChange(event: Event) {
-    console.log(this.selection);
-    console.log(event);
-  }
-
-  async ngOnInit() {
-  }
+  public toggleTopArtistsAndTrack(): void {
+    this.selection = this.form.value.results
+  };
 }
+
